@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Manufacturers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class ManufacturersController extends Controller
 {
@@ -26,7 +27,7 @@ class ManufacturersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.manufacturers.create');
     }
 
     /**
@@ -37,7 +38,15 @@ class ManufacturersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = array('name' => 'required|min:4',);
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return redirect('admin/manufacturers/create')->withErrors($validator)->withInput($request->all());
+        } else {
+            $manufacturer = new Manufacturers(['name' => $request->get('name')]);
+            $manufacturer->save();
+            return redirect('admin/manufacturers');
+        }
     }
 
     /**
@@ -59,7 +68,8 @@ class ManufacturersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $manufacturer = Manufacturers::find($id);
+        return view('admin.manufacturers.edit', compact('manufacturer',  'id'));
     }
 
     /**
@@ -71,7 +81,10 @@ class ManufacturersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manufacturer = Manufacturers::find($id);
+        $manufacturer->name = $request->get('name');
+        $manufacturer->save();
+        return redirect('admin/manufacturers')->with('success', 'Task was successful!');
     }
 
     /**

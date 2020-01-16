@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Phones;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class PhonesController extends Controller
 {
@@ -27,23 +28,36 @@ class PhonesController extends Controller
     public function create()
     {
         //
+        return view('admin.phones.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $rules = array('model' => 'required|min:6',);
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return redirect('admin.phones/create')->withErrors($validator)->withInput($request->all());
+        } else {
+            $phone = new Phones(['model' => $request->get('model'),'year' => $request->get('year'),'manufacturerId'=>$request->get('manufacturerId')]);
+            $phone->save();
+            return redirect('admin/phones');
+        }
+        //print '<pre>';
+        //print_r($request->all());
+        //die;
         //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -54,7 +68,7 @@ class PhonesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -65,8 +79,8 @@ class PhonesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -77,7 +91,7 @@ class PhonesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

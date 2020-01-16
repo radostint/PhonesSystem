@@ -5,9 +5,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>Manufacturers</h1>
-                            <a href="{{ URL::to('admin/manufacturers/create') }}" class="btn btn-success">Add
-                                manufacturer</a>
+                       <h1>Manufacturers</h1>
+                        <a href="{{ URL::to('admin/manufacturers/create') }}" class="btn btn-success">Add manufacturer</a>
                     </div>
 
                     <div class="panel-body">
@@ -21,9 +20,9 @@
                             <tr class="bg-success">
                                 <th>ID</th>
                                 <th>Manufacturer</th>
-                                @if(Auth::user()->isAdmin)
-                                    <th>Actions</th>
-                                @endif
+                                <th>Actions</th>
+
+
                             </tr>
                             </thead>
                             <tbody>
@@ -31,8 +30,7 @@
                                 <tr>
                                     <td>{{ $value->id }}</td>
                                     <td>{{$value->name}}</td>
-                                        <td><a href="{{ route('manufacturers.edit', $value->id) }}"
-                                               class="btn btn-primary">Edit </a></td>
+                                    <td> <a href="{{ route('manufacturers.edit', $value->id) }}" class="btn btn-primary">Edit </a> </td>
                                 </tr>
                             @endforeach
                             </tbody>
