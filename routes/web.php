@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'admin'], 'namespace' => 'Admin'], function () {
+    Route::resource('manufacturers', 'ManufacturersController');
+});

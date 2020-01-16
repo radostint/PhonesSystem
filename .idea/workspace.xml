@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f5d20ec-634e-4c86-be13-5d3a5509420a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ManufacturersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Manufacturers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/manufacturers/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_16_172326_create_manufacturers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_16_172326_create_manufacturers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +125,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Google Drive\VTU\3\PHP\PhonesSystem\resources\views\admin" />
+      <recent name="D:\Google Drive\VTU\3\PHP\PhonesSystem\app\Http\Controllers\Admin" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -151,7 +159,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579193213254</updated>
-      <workItem from="1579193215403" duration="1760000" />
+      <workItem from="1579193215403" duration="4290000" />
     </task>
     <servers />
   </component>
@@ -162,9 +170,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="634" y="354" key="NewPhpFileDialog" timestamp="1579194859286">
+    <state x="634" y="354" key="NewPhpFileDialog" timestamp="1579196745091">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="634" y="354" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1579194859286" />
+    <state x="634" y="354" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1579196745091" />
   </component>
 </project>
