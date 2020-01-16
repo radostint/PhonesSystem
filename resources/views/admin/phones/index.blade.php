@@ -5,9 +5,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>Manufacturers</h1>
-                            <a href="{{ URL::to('admin/manufacturers/create') }}" class="btn btn-success">Add
-                                manufacturer</a>
+                        Samples
+                        <a href="{{ URL::to('admin/samples/create') }}" class="pull-right">Add Sample</a>
                     </div>
 
                     <div class="panel-body">
@@ -16,23 +15,21 @@
                             <div class="alert alert-info">{{\Session::get('success') }}</div>
                         @endif
 
-                        <table class="table table-light table-bordered">
+                        <table class="table table-striped table-bordered">
                             <thead>
-                            <tr class="bg-success">
-                                <th>ID</th>
-                                <th>Manufacturer</th>
-                                @if(Auth::user()->isAdmin)
-                                    <th>Actions</th>
-                                @endif
+                            <tr>
+                                <td>ID</td>
+                                <td>Name</td>
+                                <td>Sample</td>
+                                <td>Actions</td>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($manufacturers as $key => $value)
+                            @foreach($phones as $key => $value)
                                 <tr>
                                     <td>{{ $value->id }}</td>
-                                    <td>{{$value->name}}</td>
-                                        <td><a href="{{ route('manufacturers.edit', $value->id) }}"
-                                               class="btn btn-primary">Edit </a></td>
+                                    <td>{{$value->manufacturer->name}}</td>
+                                    <td>{{$value->model}}</td>
                                 </tr>
                             @endforeach
                             </tbody>

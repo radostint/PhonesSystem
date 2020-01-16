@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f5d20ec-634e-4c86-be13-5d3a5509420a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_16_181640_create_phones_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PhonesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Phones.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/phones/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/manufacturers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manufacturers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,8 +128,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Google Drive\VTU\3\PHP\PhonesSystem\resources\views\admin" />
       <recent name="D:\Google Drive\VTU\3\PHP\PhonesSystem\app\Http\Controllers\Admin" />
+      <recent name="D:\Google Drive\VTU\3\PHP\PhonesSystem\resources\views\admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -155,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579193213254</updated>
-      <workItem from="1579193215403" duration="4871000" />
+      <workItem from="1579193215403" duration="6098000" />
     </task>
     <servers />
   </component>
@@ -166,9 +171,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="634" y="354" key="NewPhpFileDialog" timestamp="1579196745091">
+    <state x="634" y="354" key="NewPhpFileDialog" timestamp="1579199191403">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="634" y="354" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1579196745091" />
+    <state x="634" y="354" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1579199191403" />
   </component>
 </project>
