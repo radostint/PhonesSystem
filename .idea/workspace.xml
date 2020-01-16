@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f5d20ec-634e-4c86-be13-5d3a5509420a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ManufacturersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Manufacturers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/manufacturers/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_16_181640_create_phones_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_16_172326_create_manufacturers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_16_172326_create_manufacturers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +155,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579193213254</updated>
-      <workItem from="1579193215403" duration="4290000" />
+      <workItem from="1579193215403" duration="4871000" />
     </task>
     <servers />
   </component>
