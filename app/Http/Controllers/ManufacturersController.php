@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Manufacturers;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class ManufacturersController extends Controller
@@ -17,7 +16,7 @@ class ManufacturersController extends Controller
     public function index()
     {
         $manufacturers = Manufacturers::all();
-        return view('admin.manufacturers.index') ->with('manufacturers', $manufacturers);
+        return view('manufacturers.index') ->with('manufacturers', $manufacturers);
     }
 
     /**
@@ -27,7 +26,7 @@ class ManufacturersController extends Controller
      */
     public function create()
     {
-        return view('admin.manufacturers.create');
+        return view('manufacturers.create');
     }
 
     /**
@@ -41,11 +40,11 @@ class ManufacturersController extends Controller
         $rules = array('name' => 'required|min:4',);
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return redirect('admin/manufacturers/create')->withErrors($validator)->withInput($request->all());
+            return redirect('manufacturers')->withErrors($validator)->withInput($request->all());
         } else {
             $manufacturer = new Manufacturers(['name' => $request->get('name')]);
             $manufacturer->save();
-            return redirect('admin/manufacturers');
+            return redirect('manufacturers')->with('success', "Successfully added {$manufacturer->name}!");
         }
     }
 
@@ -69,7 +68,7 @@ class ManufacturersController extends Controller
     public function edit($id)
     {
         $manufacturer = Manufacturers::find($id);
-        return view('admin.manufacturers.edit', compact('manufacturer',  'id'));
+        return view('manufacturers.edit', compact('manufacturer',  'id'));
     }
 
     /**
@@ -84,7 +83,7 @@ class ManufacturersController extends Controller
         $manufacturer = Manufacturers::find($id);
         $manufacturer->name = $request->get('name');
         $manufacturer->save();
-        return redirect('admin/manufacturers')->with('success', 'Task was successful!');
+        return redirect('manufacturers')->with('success', 'Task was successful!');
     }
 
     /**
@@ -95,6 +94,8 @@ class ManufacturersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacturer = Manufacturers::find($id);
+        $manufacturer->delete();
+        return redirect('manufacturers')->with('success', "Successfully deleted {$manufacturer->name}!");
     }
 }

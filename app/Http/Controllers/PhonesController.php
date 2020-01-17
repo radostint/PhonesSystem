@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Phones;
+use App\Manufacturers;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class PhonesController extends Controller
@@ -17,7 +17,7 @@ class PhonesController extends Controller
     public function index()
     {
         $phones = Phones::all();
-        return view('admin.phones.index') ->with('phones', $phones);
+        return view('phones.index') ->with('phones', $phones);
     }
 
     /**
@@ -28,7 +28,8 @@ class PhonesController extends Controller
     public function create()
     {
         //
-        return view('admin.phones.create');
+        $manufacturers = Manufacturers::all();
+        return view('phones.create')->with('manufacturers', $manufacturers);
     }
 
     /**
@@ -42,11 +43,11 @@ class PhonesController extends Controller
         $rules = array('model' => 'required|min:6',);
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return redirect('admin.phones/create')->withErrors($validator)->withInput($request->all());
+            return redirect('phones/create')->withErrors($validator)->withInput($request->all());
         } else {
             $phone = new Phones(['model' => $request->get('model'),'year' => $request->get('year'),'manufacturerId'=>$request->get('manufacturerId')]);
             $phone->save();
-            return redirect('admin/phones');
+            return redirect('phones');
         }
         //print '<pre>';
         //print_r($request->all());

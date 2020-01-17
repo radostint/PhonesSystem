@@ -18,7 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'admin'], 'namespace' => 'Admin'], function () {
+Route::get('/profile', 'Admin\UsersController@profile')->name('profile');
+Route::post('/profile', 'Admin\UsersController@update_avatar');
+Route::group(['middleware' => ['web', 'auth','admin']], function () {
     Route::resource('manufacturers', 'ManufacturersController');
     Route::resource('phones', 'PhonesController');
+    Route::resource('admin/users', 'Admin\UsersController');
 });
