@@ -1,67 +1,57 @@
+@section('title','Manufacturers')
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-center mb-2">
+            <div class="col-md-8 col-md-offset-2 justify-content-center">
                 @if(Auth::user()->isAdmin)
-                    <h1 class="text-sm-center">ADMIN PANEL</h1>
-                    <h1 class="text-sm-center">Manufacturers</h1>
-                    <a href="{{ URL::to('manufacturers/create') }}" class="btn btn-primary m-2">Add
-                        manufacturer</a>
+                    <h3 class="text-sm-center text-white">ADMIN PANEL - MANUFACTURERS</h3>
+                    <a href="{{ URL::to('manufacturers/create') }}" class="btn btn-primary float-right">Add manufacturer</a>
                 @else
-                    <h1 class="float-left">Manufacturers</h1>
+                    <h1 class="text-sm-center text-white">MANUFACTURERS</h1>
                 @endif
             </div>
-
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-
-                    </div>
-
-                    <div class="panel-body col-md-7">
-                        <!-- will be used to show any messages -->
-                        @if (\Session::has('success'))
-                            <div class="alert alert-success">{{\Session::get('success') }}</div>
-                        @endif
-                        <table class="table table-light table-bordered table-hover">
-                            <thead class="thead-dark">
-                            <tr>
-                                @if(Auth::user()->isAdmin)
-                                    <th>ID</th>
-                                @endif
-                                <th>Manufacturer</th>
-                                @if(Auth::user()->isAdmin)
-                                    <th>Actions</th>
-                                @endif
-
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            @foreach($manufacturers as $key => $value)
-                                <tr>
-                                    @if(Auth::user()->isAdmin)
-                                        <td>{{ $value->id }}</td>
-                                    @endif
-                                    <td>{{$value->name}}</td>
-                                    @if(Auth::user()->isAdmin)
-                                        <td><a href="{{ route('manufacturers.edit', $value->id) }}"
-                                               class="btn btn-warning">Edit</a>
-                                            <form action="{{action('ManufacturersController@destroy', $value->id )}}"
-                                                  method="post" class="d-inline">
+        </div>
+        <!-- will be used to show any messages -->
+        @if (\Session::has('success'))
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="alert alert-success">{{\Session::get('success') }}</div>
+                </div>
+            </div>
+        @endif
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                @foreach($manufacturers->chunk(4) as $chunk)
+                    <div class="row mb-5">
+                        @foreach($chunk as $manufacturer)
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="{{asset('storage/' . $manufacturer->image)}}"
+                                         alt="phone"
+                                         style="width: 100%;object-fit: cover;height: 174px;">
+                                    <div class="card-body" style="background-color: antiquewhite">
+                                        <h5 class="card-title">{{$manufacturer->name}}</h5>
+                                        @if(Auth::user()->isAdmin)
+                                            <a href="{{ route('manufacturers.edit', $manufacturer->id) }}"
+                                               class="btn btn-primary">Edit</a>
+                                            <form
+                                                action="{{action('ManufacturersController@destroy', $manufacturer->id )}}"
+                                                method="post" class="d-inline">
                                                 {{csrf_field()}}
                                                 <input name="_method" type="hidden" value="DELETE">
-                                                <button class="btn btn-danger" type="submit">Delete</button>
+                                                <button class="btn btn-danger" type="submit"
+                                                        onclick="return confirm('Are you sure you want to delete this item?');">
+                                                    Delete
+                                                </button>
                                             </form>
-                                        </td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

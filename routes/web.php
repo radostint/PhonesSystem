@@ -25,3 +25,8 @@ Route::group(['middleware' => ['web', 'auth','admin']], function () {
     Route::resource('phones', 'PhonesController');
     Route::resource('admin/users', 'Admin\UsersController');
 });
+Route::get('/phones', 'PhonesController@index')->name('phones');
+Route::get('/manufacturers', 'ManufacturersController@index')->name('manufacturers');
+Route::post('/phones/{id}', 'PhonesController@delete_image');
+Route::post('/manufacturers/{id}', 'ManufacturersController@delete_image');
+

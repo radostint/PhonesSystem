@@ -1,3 +1,4 @@
+@section('title','Admin Panel - Users')
 @extends('layouts.app')
 @section('content')
     <div class="container">
@@ -6,7 +7,7 @@
             <!-- LIST -->
             <div class="col-md-10 text-sm-center">
                 <form id="form-list-client">
-                    <legend class="text-sm-center text-white">ADMIN PANEL - USERS</legend>
+                    <h3 class="text-sm-center text-white">ADMIN PANEL - USERS</h3>
                     <table class="table table-bordered table-condensed table-hover table-dark">
                         <thead style="background-color: #25738f; color: white;">
                         <tr>
@@ -30,10 +31,16 @@
                                         User
                                     @endif
                                 </td>
-                                <td>
-                                    <!--<button type="button" class="btn btn-primary">View</button>-->
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">Edit</a>
+                                    <form action="{{action('Admin\UsersController@destroy', $user->id )}}"
+                                          method="post" class="d-inline">
+                                        {{csrf_field()}}
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <button class="btn btn-danger" type="submit"
+                                                onclick="return confirm('Are you sure you want to delete this item?');">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

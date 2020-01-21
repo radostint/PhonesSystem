@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Phones extends Model
 {
-    protected $fillable = ['model','year','manufacturerId',];
+    protected $fillable = ['model', 'year', 'manufacturerId', 'image',];
 
     public function manufacturer()
     {

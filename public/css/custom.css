@@ -1,3 +1,22 @@
-#app {
-    background: linear-gradient(rgba(0,5,5,.8), rgba(255,255,255,.5)), url("https://previews.123rf.com/images/nexusplexus/nexusplexus1702/nexusplexus170201914/71393866-modern-connection-technologies-background-mixed-media.jpg");
+html {
+    height: 100vh !important;
 }
+
+body {
+    background: linear-gradient(rgba(0, 5, 5, .3), rgba(0, 0, 0, .8)), url("../images/background.jpg") center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100% !important;
+}
+#app {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 35px;
+}
+#footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+

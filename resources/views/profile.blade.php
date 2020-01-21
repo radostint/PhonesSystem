@@ -1,16 +1,16 @@
+@section('title', 'Your Profile')
 @extends('layouts.app')
-
 @section('content')
-    <div class="container">
+    <div class="container" style="color: white">
         <div class="row justify-content-center">
             <div class="col-md-10 col-md-offset-1">
-                <h1 class="text-sm-center text-white">Your profile</h1>
+                <h1 class="text-sm-center text-white">Your Profile</h1>
                 <img src="storage/{{$user->avatar}}/"
                      style="width: 18rem; float: left; border-radius: 50%; margin-right: 25px;">
                 <table class="table table-striped table-dark col-md-4">
                     <thead>
                     <tr>
-                        <th scope="col">Username: </th>
+                        <th scope="col">Username:</th>
                         <td scope="col">{{$user->name}}</td>
                     </tr>
                     </thead>
@@ -20,11 +20,11 @@
                         <td>{{$user->email}}</td>
                     </tr>
                     @if($user->isAdmin)
-                    <tr>
-                        <th scope="row">Role</th>
-                        <td>Administrator</td>
-                    </tr>
-                        @endif
+                        <tr>
+                            <th scope="row">Role</th>
+                            <td>Administrator</td>
+                        </tr>
+                    @endif
                     </tbody>
                 </table>
 
@@ -39,7 +39,6 @@
                     <input type="submit" class="btn btn-sm btn-primary" value="Upload photo">
                 </form>
             </div>
-
         </div>
     </div>
 @endsection
