@@ -1,4 +1,7 @@
 *
 !public/
 !.gitignore
-!images/
+!public/images/
+!public/images/avatars/default.jpg
+!public/images/phones/default.jpg
+!public/images/manufacturers/default.jpg
