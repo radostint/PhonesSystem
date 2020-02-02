@@ -1,99 +1,80 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('content')
+    <div class="container-fluid">
+        <div class="row landing-page">
+            <div class="col-md-12" style="height: auto;padding-bottom: 30px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div
+                            style="width: 715px;height: 395px;background-image: url('images/landing-banner.png');background-size: 715px 395px;overflow: hidden;">
+                            <div class="sale-info justify-content-center" style="text-align: center">
+                                <h1>BIG SALE</h1>
+                                <h2>On all phones</h2>
+                                <h4>01.01.-03.02.2020</h4>
+                                <h3 id="promo"></h3>
+                            </div>
+                            <a href="phones" class="btn btn-success-pulse lp-info-btn">View all phones</a>
+                        </div>
+                    </div>
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/profile') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="custom-card">
+                                <div class="left">
+                                    <img src="storage/images/phones/JHryA34l6YWlUhwKp9hKJygcWnATUAUIjaWUhdzS.png"
+                                         style="width: 400px"
+                                         alt="shoe">
+                                </div>
+                                <div class="right">
+                                    <div class="product-info">
+                                        <div class="product-name">
+                                            <img
+                                                src="storage/images/manufacturers/VSwuJ1CsFH7LgiXqrNdAijX4kDBUV7QjbrabUTj1.png">
+                                        </div>
+                                        <div class="details">
+                                            <h3>Released: 2019</h3>
+                                            <h2>Galaxy S10+</h2>
+                                        </div>
+                                        <span class="foot"><i class="fa fa-shopping-bag"></i>Buy Now</span>
+                                        <span class="foot"><i class="fa fa-shopping-cart"></i>Add TO Cart</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Feb 3, 2020 16:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("promo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s LEFT";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("promo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+@endsection

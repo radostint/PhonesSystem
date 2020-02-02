@@ -1,22 +1,335 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
 html {
     height: 100vh !important;
 }
 
 body {
-    background: linear-gradient(rgba(0, 5, 5, .3), rgba(0, 0, 0, .8)), url("../images/background.jpg") center no-repeat;
+    background: linear-gradient(rgba(0, 5, 5, 0.7), rgba(0, 0, 0, .8)), url("../images/background.jpg") center no-repeat;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100% !important;
 }
+
 #app {
     position: relative;
     min-height: 100vh;
     padding-bottom: 35px;
 }
-#footer{
+
+#footer {
     position: absolute;
     width: 100%;
     bottom: 0;
 }
 
+nav:first-of-type {
+    background: linear-gradient(45deg, rgba(75, 4, 10, .85), rgba(221, 5, 28, .9));
+}
 
+.sidebar {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    bottom: 0;
+    width: 100%;
+}
+
+.sidebar-item {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(-35deg, rgba(221, 5, 28, 0.8), rgba(75, 4, 10, 0.68));
+    color: white;
+    border-radius: 15%;
+}
+
+
+/*product info */
+
+.custom-card h1 {
+    color: #ff6d39;
+    font-family: "muli";
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 21px;
+    display: inline-block;
+}
+
+.product-name i {
+    color: #ffffff;
+    transition: 0.3s all ease;
+    margin: 0px 12px;
+}
+
+.product-name i:hover {
+    color: #ff6d39;
+    cursor: pointer;
+}
+
+.custom-card h3 {
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.custom-card h2 {
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 29px;
+}
+
+.custom-card h4 {
+    display: inline-block;
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h4.dis {
+    display: inline-block;
+    color: #ffffff;
+    font-family: "muli";
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 30px;
+    text-decoration: line-through #ea3201;
+}
+
+h4.dis span {
+    text-decoration: line-through #ea3201;
+}
+
+.bg {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 2px;
+    margin-right: 20px;
+    transition: 0.3s all ease;
+    border-radius: 50%;
+}
+
+.bg:hover {
+    background-color: #ff6d39;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.yellow {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: #fec60f;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.3s all ease;
+}
+
+.black {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: #000000;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.3s all ease;
+}
+
+.blue {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: #02a2ca;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.3s all ease;
+}
+
+.yellow:hover,
+.black:hover,
+.blue:hover {
+    border: 2px solid #f76b39;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.foot {
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 20px;
+    margin-right: 50px;
+    font-weight: 500;
+    font-size: 11px;
+    float: left;
+    transition: 0.3s all ease;
+}
+
+.foot i:nth-child(1) {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.foot:hover {
+    color: #f76b39;
+    cursor: pointer;
+}
+
+/*shoe slider indicator*/
+
+.left i {
+    color: #ffd5c6;
+    margin-top: 260px;
+    transition: 0.3s all ease;
+}
+
+.fa-long-arrow-left {
+    margin-left: -275px;
+}
+
+.fa-long-arrow-right {
+    margin-left: 15px;
+}
+
+.left i:hover {
+    cursor: pointer;
+    color: #2a2f40;
+}
+
+/*landing page*/
+
+.custom-card {
+    display: flex;
+    align-items: center;
+    /*background: linear-gradient(rgba(0, 5, 5, .3), rgba(0, 0, 0, .8)), url("https://i.pinimg.com/originals/f2/18/e1/f218e1d2783e4b391ae819f30769c0bc.jpg") no-repeat center;
+    box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.4);*/
+    height: 395px;
+    width: 715px;
+    margin: 0 auto;
+}
+
+.left {
+    height: 395px;
+    width: 330px;
+    display: flex;
+    align-items: center;
+    background-color: #02a2ca;
+    border-radius: 10% 50% 50% 10%;
+    position: absolute;
+    z-index: 5;
+}
+
+.left img {
+    margin-left: -15px;
+    margin-top: 3px;
+}
+
+.right {
+    content: "";
+    height: 395px;
+    width: 550px;
+    background-color: black;
+    z-index: 3;
+    margin-left: 165px;
+    border-radius: 0% 10% 10% 0%;
+}
+
+.product-name img {
+    width: 200px;
+    margin-left: 25px;
+    margin-top: -50px;
+}
+
+.product-info {
+    position: absolute;
+    margin-left: 245px;
+    height: 394px;
+    width: 305px;
+    z-index: 10;
+}
+
+.landing-page {
+    margin: auto;
+}
+
+.sale-info {
+    color: white;
+    margin: 110px 0 0 240px;
+    position: absolute;
+}
+
+.lp-info-btn {
+    font-size: 13px !important;
+    margin-left: 442px;
+    font-family: muli;
+    margin-top: 340px;
+    position: absolute;
+    color: white;
+}
+a.btn-success-pulse:hover{
+    color: lightgray;
+}
+
+/*end of landing page*/
+/*Search bar*/
+.searchbar{
+    margin-left: 15px;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 39px;
+    width: 350px;
+    background-color: #353b48;
+    border-radius: 30px;
+}
+
+.search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 100px;
+    padding-left: 10px;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+    caret-color:red;
+}
+
+.searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+}
+/*End of Search bar*/
+
+input[type=file] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
