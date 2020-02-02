@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f5d20ec-634e-4c86-be13-5d3a5509420a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/PhonesTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +181,7 @@
       <workItem from="1580322515920" duration="9553000" />
       <workItem from="1580374393417" duration="29438000" />
       <workItem from="1580464850104" duration="598000" />
-      <workItem from="1580631481271" duration="2220000" />
+      <workItem from="1580631481271" duration="2353000" />
     </task>
     <servers />
   </component>
