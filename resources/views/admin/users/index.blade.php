@@ -31,7 +31,7 @@
                                         User
                                     @endif
                                 </td>
-                                <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">Edit</a>
+                                <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Edit</a>
                                     <form action="{{action('Admin\UsersController@destroy', $user->id )}}"
                                           method="post" class="d-inline">
                                         {{csrf_field()}}

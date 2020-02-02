@@ -16,14 +16,18 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/buttons.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary" style="box-shadow: 0 0 50px white;">
+    <nav class="navbar navbar-expand-md navbar-dark" style="box-shadow: 0 0 50px black;font-family: muli">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="/images/logo.png" style="height: 42px">
@@ -62,6 +66,17 @@
                             <a class="nav-link"
                                href="{{ url('/manufacturers')  }}" {{request()->is('manufacturers*') ? 'style=color:white' : ''}}>{{ __('Manufacturers') }}</a>
                         </li>
+                        <li>
+                            <form action="{{ url('search') }}" method="post" id="search" autocomplete="off">
+                                <input type="hidden" value="{{csrf_token()}}" name="_token">
+                                <div class="searchbar">
+                                    <input class="search_input" type="text" name="query" placeholder="Search...">
+                                    <a href="#" class="search_icon"
+                                       onclick="document.getElementById('search').submit()"><i
+                                            class="fas fa-search"></i></a>
+                                </div>
+                            </form>
+                        </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -84,7 +99,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                <i class="fa fa-sign-out" style="font-size: 18px;"></i>
+                                <i class="fas fa-sign-out-alt" style="font-size: 18px;"></i>
                                 <span style="font-weight: bold; padding-left: 10px;">Logout</span>
                             </a>
 

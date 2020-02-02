@@ -18,15 +18,22 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'Admin\UsersController@profile')->name('profile');
 Route::post('/profile', 'Admin\UsersController@update_avatar');
-Route::group(['middleware' => ['web', 'auth','admin']], function () {
+Route::group(['middleware' => ['web', 'auth', 'admin']], function () {
     Route::resource('manufacturers', 'ManufacturersController');
     Route::resource('phones', 'PhonesController');
     Route::resource('admin/users', 'Admin\UsersController');
 });
-Route::get('/phones', 'PhonesController@index')->name('phones');
-Route::get('/manufacturers', 'ManufacturersController@index')->name('manufacturers');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/phones', 'PhonesController@index')->name('phones');
+    Route::get('/manufacturers', 'ManufacturersController@index')->name('manufacturers');
+    Route::get('/profile', 'Admin\UsersController@profile')->name('profile');
+
+});
 Route::post('/phones/{id}', 'PhonesController@delete_image');
 Route::post('/manufacturers/{id}', 'ManufacturersController@delete_image');
+Route::post('filter', 'PhonesController@filter');
+Route::post('search', 'PhonesController@search');
+
+
 

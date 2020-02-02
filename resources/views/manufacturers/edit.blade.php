@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-md-auto">
                                 <form method="post" action="{{action('ManufacturersController@update', $id)}}"
-                                      enctype="multipart/form-data">
+                                      enctype="multipart/form-data" autocomplete="off">
                                     <div class="form-group">
                                         {{csrf_field()}}
                                         <input name="_method" type="hidden" value="PATCH">

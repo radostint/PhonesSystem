@@ -25,10 +25,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h3>Add new manufacturer</h3></div>
+                    <div class="card-header"><h3>Add new phone</h3></div>
 
                     <div class="card-body">
-                        <form method="post" action="{{url('phones')}}" enctype="multipart/form-data">
+                        <form method="post" action="{{action('PhonesController@store')}}" enctype="multipart/form-data" autocomplete="off">
                             {{ csrf_field() }}
                             <div class="form-group row">
                                 <div class="col">

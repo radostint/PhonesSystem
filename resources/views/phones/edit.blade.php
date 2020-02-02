@@ -59,7 +59,7 @@
                             </div>
                             <div class="col">
                                 <form method="post" enctype="multipart/form-data"
-                                      action="{{action('PhonesController@update', $id)}}">
+                                      action="{{action('PhonesController@update', $id)}}" autocomplete="off">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
                                     <div class="form-group row">

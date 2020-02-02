@@ -26,11 +26,11 @@
                     <div class="row mb-5">
                         @foreach($chunk as $manufacturer)
                             <div class="col-sm-3">
-                                <div class="card">
+                                <div class="card" style="color:white;box-shadow: 0 5px 25px 5px black;background: linear-gradient(315deg,rgba(151, 222, 228, 0.85), rgba(255,255,255, 0.1));padding: 2px;">
                                     <img class="card-img-top" src="{{asset('storage/' . $manufacturer->image)}}"
                                          alt="phone"
                                          style="width: 100%;object-fit: cover;height: 174px;">
-                                    <div class="card-body" style="background-color: antiquewhite">
+                                    <div class="card-body">
                                         <h5 class="card-title">{{$manufacturer->name}}</h5>
                                         @if(Auth::user()->isAdmin)
                                             <a href="{{ route('manufacturers.edit', $manufacturer->id) }}"

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use function foo\func;
 
 class PhonesController extends Controller
 {
@@ -21,7 +22,34 @@ class PhonesController extends Controller
     public function index()
     {
         $phones = Phones::all();
-        return view('phones.index')->with('phones', $phones);
+        $manufacturers = Manufacturers::all();
+        return view('phones.index')->with('phones', $phones)->with('manufacturers', $manufacturers);
+    }
+
+    public function filter()
+    {
+        if (!request()->filled('model') && !request()->filled('year') && !request()->filled('manufacturerId')) {
+            return redirect()->action('PhonesController@index')->with('noParams', 'No filters were applied!');
+        }
+        $manufacturers = Manufacturers::all();
+        $phones = Phones::query()->when(request()->filled('manufacturerId'), function ($query) {
+            return $query->where('manufacturerId', '=', request('manufacturerId'));
+        })->when(request()->filled('model'), function ($query) {
+            return $query->where('model', 'like', '%' . request('model') . '%');
+        })->when(request()->filled('year'), function ($query) {
+            return $query->where('year', '=', request('year'));
+        })->get();
+        if (!$phones->count()) {
+            return view('phones.index')->with('phones', $phones)->with('manufacturers', $manufacturers)->with('no_results', 'No results found.');
+        }
+        return view('phones.index')->with('phones', $phones)->with('manufacturers', $manufacturers);
+    }
+    public function search(){
+        $manufacturers = Manufacturers::all();
+        $phones = Phones::query()->when(request()->filled('query'), function ($query) {
+            return $query->where('model', 'like', '%' . request('query') . '%');
+        })->get();
+        return view('phones.index')->with('phones', $phones)->with('manufacturers',$manufacturers);
     }
 
     /**
@@ -56,7 +84,7 @@ class PhonesController extends Controller
             }
             $phone = new Phones(['model' => $request->get('model'), 'year' => $request->get('year'), 'manufacturerId' => $request->get('manufacturerId'), 'image' => $path]);
             $phone->save();
-            return redirect('phones');
+            return redirect()->action('PhonesController@index');
         }
     }
 
@@ -130,7 +158,9 @@ class PhonesController extends Controller
     public function destroy($id)
     {
         $phone = Phones::find($id);
-        unlink(public_path("storage/$phone->image"));
+        if ($phone->image != 'images/phones/default.jpg') {
+            unlink(public_path("storage/$phone->image"));
+        }
         $phone->delete();
         return redirect('phones')->with('success', "Successfully deleted {$phone->manufacturer->name}  {$phone->model}!");
     }

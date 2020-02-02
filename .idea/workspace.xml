@@ -2,28 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f5d20ec-634e-4c86-be13-5d3a5509420a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_21_133054_add_image_to_phones_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_21_211843_add_image_to_manufacturers_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/phones/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/buttons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing-banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing-banner.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ManufacturersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ManufacturersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhonesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhonesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Manufacturers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Manufacturers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Phones.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Phones.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/background.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/manufacturers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manufacturers/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/manufacturers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manufacturers/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/manufacturers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manufacturers/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/phones/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phones/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phones/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phones/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/phones/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phones/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -193,7 +187,16 @@
       <workItem from="1579340899222" duration="38000" />
       <workItem from="1579341304460" duration="6289000" />
       <workItem from="1579527415807" duration="14790000" />
-      <workItem from="1579602025104" duration="38871000" />
+      <workItem from="1579602025104" duration="39470000" />
+      <workItem from="1580112533648" duration="6340000" />
+      <workItem from="1580141748976" duration="4787000" />
+      <workItem from="1580152500415" duration="9133000" />
+      <workItem from="1580221477287" duration="10534000" />
+      <workItem from="1580238020572" duration="6562000" />
+      <workItem from="1580311583393" duration="5033000" />
+      <workItem from="1580322515920" duration="9553000" />
+      <workItem from="1580374393417" duration="29438000" />
+      <workItem from="1580464850104" duration="598000" />
     </task>
     <servers />
   </component>
@@ -204,6 +207,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="392" y="89" key="#Intentions" timestamp="1580229993555">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="89" key="#Intentions/0.0.1600.860@0.0.1600.860" timestamp="1580229993555" />
     <state x="480" y="158" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579634250559">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -212,6 +219,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1579644118254" />
+    <state x="425" y="25" key="CommitChangelistDialog2" timestamp="1580144490043">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1580144490043" />
     <state x="634" y="354" key="NewPhpFileDialog" timestamp="1579549473692">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -220,10 +231,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="73" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1579615287816" />
-    <state x="496" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1579602029848">
+    <state x="496" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1580480941416">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1579602029848" />
+    <state x="496" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1580480941416" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1580331020414">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1580331020414" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1579646116765">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

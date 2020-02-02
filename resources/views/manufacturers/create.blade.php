@@ -12,7 +12,7 @@
                                 @if($errors->first('name'))
                                     <div class="alert alert-danger col-md-6"> {{$errors->first('name')}}</div>
                                 @endif
-                                <form method="post" action="{{url('manufacturers')}}" enctype="multipart/form-data">
+                                <form method="post" action="{{url('manufacturers')}}" enctype="multipart/form-data" autocomplete="off">
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
