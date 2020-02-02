@@ -20,6 +20,13 @@
                 </div>
             </div>
         @endif
+        @if (\Session::has('fail'))
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="alert alert-danger">{{\Session::get('fail') }}</div>
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-10 offset-1">
                 @foreach($manufacturers->chunk(4) as $chunk)

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Manufacturers;
+use App\Phones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,7 +38,7 @@ class ManufacturersController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = array('name' => 'required|min:4','image'=>'image|mimes:jpeg,png',);
+        $rules = array('name' => 'required|min:4', 'image' => 'image|mimes:jpeg,png',);
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return redirect('manufacturers/create')->withErrors($validator)->withInput($request->all());
@@ -81,7 +82,7 @@ class ManufacturersController extends Controller
     public function update(Request $request, $id)
     {
         $manufacturer = Manufacturers::find($id);
-        $rules = array('name' => 'required|min:4','image'=>'image|mimes:jpeg,png',);
+        $rules = array('name' => 'required|min:4', 'image' => 'image|mimes:jpeg,png',);
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return redirect('manufacturers/create')->withErrors($validator)->withInput($request->all());
@@ -115,10 +116,19 @@ class ManufacturersController extends Controller
     public function destroy($id)
     {
         $manufacturer = Manufacturers::find($id);
+
+        $phones = Phones::all();
+        foreach ($phones as $phone) {
+            if ($id == $phone->manufacturerId) {
+                return redirect('manufacturers')->with('fail', "There was a problem deleting  {$manufacturer->name}! Please first delete all phones with that brand.");
+            }
+        }
+        die();
         unlink(public_path("storage/$manufacturer->image"));
         $manufacturer->delete();
         return redirect('manufacturers')->with('success', "Successfully deleted {$manufacturer->name}!");
     }
+
     public function delete_image($id)
     {
         $manufacturer = Manufacturers::find($id);
